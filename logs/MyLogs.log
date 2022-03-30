@@ -1,0 +1,8 @@
+[INFO ] 2022-03-29 14:14:32.220 [main] Log4jDemo - info Msg
+[ERROR] 2022-03-29 14:14:32.223 [main] Log4jDemo - Erro Msg
+[WARN ] 2022-03-29 14:14:32.223 [main] Log4jDemo - warn Msg
+[FATAL] 2022-03-29 14:14:32.223 [main] Log4jDemo - fatal Msg
+[INFO ] 2022-03-29 14:15:20.393 [main] Log4jDemo - info Msg
+[ERROR] 2022-03-29 14:15:20.396 [main] Log4jDemo - Erro Msg
+[WARN ] 2022-03-29 14:15:20.396 [main] Log4jDemo - warn Msg
+[FATAL] 2022-03-29 14:15:20.396 [main] Log4jDemo - fatal Msg
