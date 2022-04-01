@@ -6,6 +6,7 @@
       <class name="TestCases.BaseTest">
         <methods>
           <include name="baseTest"/>
+          <include name="sample"/>
           <include name="setup"/>
         </methods>
       </class> <!-- TestCases.BaseTest -->

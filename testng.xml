@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
- <listeners>
-	<listener class-name="testReports.Listeners"></listener>
-  </listeners>
-  <test thread-count="5" name="VehicleInsuranceTest">
-    <classes>
-      <class name="TestCases.BaseTest"/>
-    </classes>
-  </test> <!-- Test -->
+<suite name="Suite" >
+	<listeners>
+		<listener class-name="testReports.Listeners"></listener>
+	</listeners>
+	<test name="ChromeTest">
+		<parameter name="browser" value="Chrome" />
+		<classes>
+			<class name="TestCases.BaseTest"></class>
+		</classes>
+	</test>
+	<test  name="FirefoxTest">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="TestCases.BaseTest" />
+		</classes>
+	</test> <!-- Test -->
+
 </suite> <!-- Suite -->

@@ -4,7 +4,8 @@
   <listeners>
     <listener class-name="testReports.Listeners"/>
   </listeners>
-  <test thread-count="5" name="VehicleInsuranceTest(failed)">
+  <test thread-count="5" name="ChromeTest(failed)">
+    <parameter name="browser" value="Chrome"/>
     <classes>
       <class name="TestCases.BaseTest">
         <methods>
@@ -13,5 +14,16 @@
         </methods>
       </class> <!-- TestCases.BaseTest -->
     </classes>
-  </test> <!-- VehicleInsuranceTest(failed) -->
+  </test> <!-- ChromeTest(failed) -->
+  <test thread-count="5" name="FirefoxTest(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="TestCases.BaseTest">
+        <methods>
+          <include name="baseTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- TestCases.BaseTest -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -3,8 +3,12 @@ package TestCases;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -20,14 +24,32 @@ public class BaseTest {
 	 public static WebDriver driver;
 	 //public static ExtentReports extentReport;
 	 String SuccessMsg;
-	
+	@Parameters("browser")
 	@BeforeTest
-	public void setup() {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+	public void setup(String browser) {
+		if (browser.equalsIgnoreCase("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+		}
+
+		else if (browser.equalsIgnoreCase("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		}
+
+		else if (browser.equalsIgnoreCase("ie")) {	
+			WebDriverManager.iedriver().setup();
+			driver = new InternetExplorerDriver();
+		}
+		
+		else if (browser.equalsIgnoreCase("edge")) {	
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+		}
+		
 		driver.manage().deleteAllCookies();
 		//Specifiying pageLoadTimeout and Implicit wait
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("http://sampleapp.tricentis.com/101/index.php");
 		driver.manage().window().maximize();
